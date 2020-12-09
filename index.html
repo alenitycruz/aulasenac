@@ -1,20 +1,59 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula HTML</title>
+    <link rel="stylesheet" href="index.css">
     <style>
-        #bloco {
+        /* #bloco {
             color: blue;
-        }
+            text-shadow: 2px 2px 2px red;
+                       }
+        .bloco {background-color: green;
+        color: white !important;}
+
+        .tamfont{
+font-size: 22px;
+
+        } */
     </style>
 </head>
 <body>
     <!-- atributo inline -->
-    <h1 style="color: crimson; text-shadow: 2px 3px 2px blue;">Minha página inicial</h1>
+    <h1 class="bloco tamFonte" style="color:red; text-shadow: 2px 3px 2px;">Minha página inicial</h1>
     <!-- atributo em bloco -->
-    <h1 id="bloco">Minha página2 inicial</h1>
-    <p>Este é meu primeiro parágrafo</p>
+    <br>
+    <h1 class="bloco" id="bloco">Minha página2 inicial</h1>
+    <br>
+    <h1 id="titulo" class="bloco tamFonte">Minha página3 inicial</h1> 
+<br>
+    <p id="mudarTexto">Este é meu primeiro parágrafo</p>
+    <button onclick="mudarTexto()">Mudar</button><br><br>
+    <button onclick="inserirTexto()">Inserir</button><br><br>
+    <button onclick="limparTexto()">Limpar</button>
+
+    <input type="text" name="texto" id="campo">
 </body>
+<script>
+
+function mudarTexto() {
+    var txt = document.getElementById('titulo').innerHTML
+    console.log(txt)
+    document.getElementById('mudarTexto').innerHTML = "Esse é o novo texto"
+    document.getElementById('mudarTexto').style.color = "red"
+}
+
+function inserirTexto () {
+    var texto = "Alessandra Cruz"
+document.getElementById('campo').value = texto
+
+}
+
+function limparTexto () {
+document.getElementById('campo').value = ''
+
+}
+</script>
 </html>
